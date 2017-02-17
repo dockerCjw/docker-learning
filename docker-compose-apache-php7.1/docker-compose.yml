@@ -10,9 +10,9 @@ services:
       - "8801:443"
     volumes:
     # 挂载数据盘 (PHP的配置文件未挂载，因为变量的原因,但是dockerfile,已经是匿名挂载.)
-        - apache-config:/etc/apache2/
-        - /var/www/apache:/var/www/
-        - apache-log:/var/log/apache2/
+      - apache-config:/etc/apache2/
+      - /var/www/apache:/var/www/
+      - apache-log:/var/log/apache2/
 
 volumes:
   apache-log:                                       # apache的匿名数据卷
