@@ -1,0 +1,14 @@
+version: "2"
+services:
+  redis:
+    image: redis:3.2.7                      #使用redis镜像
+
+    ports:                                  # 提供的端口
+      - "6379:6379"
+
+    volumes:                                # 绑定数据卷，以保证持久化
+      - redis:/data
+
+volumes:
+  redis:
+    driver: local
