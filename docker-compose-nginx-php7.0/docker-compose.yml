@@ -2,9 +2,7 @@ version: '2'
 services:
   #nginx 服务
   nginx:
-    build:
-       context: ./nginx/
-       dockerfile: Dockerfile
+    image: nginx:latest
     depends_on:
       - php7.0-fpm
     ports:                                  # 对外开放端口
