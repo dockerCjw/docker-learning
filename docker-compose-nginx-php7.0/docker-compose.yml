@@ -19,10 +19,3 @@ services:
     ports:                                  # 对外开放端口
       - "9000:9000"
 
-volumes:
-  apache-log:                                       # apache的匿名数据卷
-    driver: local
-  apache-config:
-    driver: local
-  apache-php-config:
-    driver: local
