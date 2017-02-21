@@ -1,0 +1,28 @@
+version: '2'
+services:
+  #nginx 服务
+  nginx:
+    build:
+       context: ./nginx/
+       dockerfile: Dockerfile
+    depends_on:
+      - php7.0-fpm
+    ports:                                  # 对外开放端口
+      - "8080:80"
+      - "8801:443"
+
+  # php7.0-fpm 服务
+  php7.0-fpm:
+    build:
+      context: ./php7.0-fpm/
+      dockerfile: Dockerfile
+    ports:                                  # 对外开放端口
+      - "9000:9000"
+
+volumes:
+  apache-log:                                       # apache的匿名数据卷
+    driver: local
+  apache-config:
+    driver: local
+  apache-php-config:
+    driver: local
